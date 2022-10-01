@@ -1,0 +1,61 @@
+.banner {
+  background-image: url("https://i.im.ge/2022/09/28/1CaPEy.login-banner.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.contents {
+  position: absolute;
+  top: 11.5rem;
+  z-index: 1;
+  color: white;
+  padding: 10px;
+  max-width: 700px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.contents > h1 {
+  font-size: 3.2rem;
+}
+.contents > h2 {
+  font-weight: 400;
+  margin-top: 10px;
+  padding: 5px;
+  font-size: 1.5rem;
+}
+.contents > h3 {
+  font-weight: 300;
+  margin-top: 15px;
+  padding: 5px;
+  font-size: 20px;
+}
+.flex_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+.flex_box > input {
+  width: 400px;
+  max-width: 600px;
+  height: 60px;
+  outline: 0;
+  font-size: 18px;
+  border: 0;
+}
+.btn {
+  height: 60px;
+  border: 0;
+  font-size: 25px;
+  align-items: center;
+}

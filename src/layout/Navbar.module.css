@@ -1,0 +1,32 @@
+.nav_bar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 8px;
+  z-index: 1;
+  transition-timing-function: ease-in;
+  transition: all 0.5s;
+}
+.nav_black {
+  background-color: black;
+}
+.nav_items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 25px;
+}
+.nav_items img {
+  width: 130px;
+  cursor: pointer;
+}
+
+.signin_btn button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 15px;
+  background: red;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
