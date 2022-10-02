@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { selectUser } from "../features/userSlice";
 import styles from "../layout/Navbar.module.css";
 const Navbar = ({ setSignIn }) => {
   const [show, setShow] = useState(false);
+  const user = selectUser;
   const { nav_items, nav_logo, signin_btn, nav_bar, nav_black } = styles;
 
   const navTransition = () => {
@@ -26,8 +28,13 @@ const Navbar = ({ setSignIn }) => {
               alt="netflix-logo"
             />
           </Link>
+
           <div className={signin_btn}>
-            <button onClick={() => setSignIn(true)}>SIGN IN</button>
+            {user ? (
+              <img src="https://iili.io/Lwkden.png" alt="user-profile" />
+            ) : (
+              <button onClick={() => setSignIn(true)}>SIGN IN</button>
+            )}
           </div>
         </div>
       </div>

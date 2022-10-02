@@ -1,9 +1,12 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomeScreen from "../components/Home/HomeScreen";
+import useFirebase from "../config/firebase/useFirebase";
+import { selectUser } from "../features/userSlice";
 import LoginScreen from "../pages/LoginScreen";
 export const Index = () => {
-  const user = false;
+  const user = selectUser;
   return (
     <BrowserRouter>
       <Routes>
