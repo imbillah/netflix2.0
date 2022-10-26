@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import { selectUser } from "../features/userSlice";
 import styles from "../layout/Navbar.module.css";
 const Navbar = ({ setSignIn }) => {
   const [show, setShow] = useState(false);
-  const user = selectUser;
+  const user = useSelector(selectUser);
+  const nevigate = useNavigate();
   const { nav_items, nav_logo, signin_btn, nav_bar, nav_black } = styles;
 
   const navTransition = () => {
@@ -31,7 +33,11 @@ const Navbar = ({ setSignIn }) => {
 
           <div className={signin_btn}>
             {user ? (
-              <img src="https://iili.io/Lwkden.png" alt="user-profile" />
+              <img
+                onClick={() => nevigate("/profile")}
+                src="https://iili.io/Lwkden.png"
+                alt="user-profile"
+              />
             ) : (
               <button onClick={() => setSignIn(true)}>SIGN IN</button>
             )}

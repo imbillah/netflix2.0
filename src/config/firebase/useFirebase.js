@@ -3,12 +3,11 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  onAuthStateChanged,
+  signOut,
 } from "firebase/auth";
-import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { logout } from "../../features/userSlice";
 import Swal from "sweetalert2";
-import { login } from "../../features/userSlice";
+import { useDispatch } from "react-redux";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_KEY,
@@ -24,6 +23,7 @@ initializeApp(firebaseConfig);
 const useFirebase = () => {
   const auth = getAuth();
   const dispatch = useDispatch();
+
   // creating user with email & pass
   const registerUser = (email, password) => {
     createUserWithEmailAndPassword(auth, email, password)
@@ -43,20 +43,6 @@ const useFirebase = () => {
       });
   };
 
-  // tracking users
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        dispatch(login(user));
-        // ...
-      } else {
-        // User is signed out
-        // ...
-      }
-    });
-    return unsubscribe;
-  });
-
   // user login
   const logInUser = (email, password) => {
     signInWithEmailAndPassword(auth, email, password)
@@ -67,9 +53,22 @@ const useFirebase = () => {
         console.log(error.message);
       });
   };
+
+  //user logout
+  const logOutUser = () => {
+    signOut(auth)
+      .then(() => {
+        dispatch(logout);
+        alert("Your are logged out now");
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  };
   return {
     registerUser,
     logInUser,
+    logOutUser,
   };
 };
 

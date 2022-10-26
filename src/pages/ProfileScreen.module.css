@@ -1,0 +1,90 @@
+.profile__container {
+  background-image: url("https://i.im.ge/2022/09/28/1CaPEy.login-banner.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+}
+.bg__gradient {
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.user__profile {
+  position: absolute;
+  width: 80%;
+  top: 5rem;
+  height: 80%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  color: white;
+  text-align: center;
+}
+.profile__grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  padding: 10px;
+  grid-column-gap: 10px;
+  margin-top: 20px;
+}
+.user__info {
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  height: 450px;
+  padding-top: 30px;
+}
+.user__info > img {
+  width: 80px;
+  border-radius: 50%;
+  margin-top: 20px;
+}
+.user__info > h3 {
+  margin: 15px 0;
+}
+.user__info > button {
+  margin-top: 58px;
+}
+.subscription__box {
+  padding: 5px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 8px;
+  margin-top: 10px;
+}
+.sub__container {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  padding: 20px 10px;
+}
+.subscription__plan {
+  padding: 10px;
+  height: 350px;
+  border: 1px solid dimgrey;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 450ms;
+}
+.subscription__plan:hover {
+  transform: scale(1.04);
+  opacity: 1;
+}
+.subscription__plan > h2,
+h4,
+p {
+  margin: 20px 0;
+}
+
+.icons > i {
+  padding: 5px;
+  font-size: 25px;
+}
+.subscription__plan > button {
+  margin: 25px 0;
+}
+.subscription__plan > p {
+  font-size: 16px;
+  font-weight: 600;
+}
